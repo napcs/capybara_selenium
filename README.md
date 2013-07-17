@@ -1,6 +1,6 @@
 # Capybara/Selenium Test Harness
 
-This is a simple configuration of RSpec and Capybara for testing local static pages or internet pages with Selenium
+This is a simple way to automate testing local static pages or internet pages with Selenium and your web browser.
 
 It's very rough right now but it works and I'm sharing this so maybe you can benefit from it too. If you think I can clean up the code better, let me know and I'd be happy to take patches.
 
@@ -8,12 +8,23 @@ It's very rough right now but it works and I'm sharing this so maybe you can ben
 
 Ensure Firefox is installed in its default location.
 
-This uses Rack to serve the files in the public/ folder. Nothing fancy. Modify it to run a Sinatra app if you want. 
+Ensure Ruby is installed. Also make sure you have Bundler installed. 
+
+Now clone this repository, change into the folder that contains the repo
+you cloned, and run
 
     $ bundle
+
+to install dependencies. Then run
+
     $ bundle exec rspec
     
-This should run any tests in the `spec` folder, popping the browser open to run them.
+to run the example tests.
+
+This command runs any tests in the `spec` folder, popping the browser open to run them.
+
+To use this for real, you'll remove the example tests and you'll create your own. Your tests will
+go in `spec` and your HTML files will go in `public`. How about a tutorial?
 
 ### Creating a test
 
@@ -137,6 +148,10 @@ Visit https://github.com/jnicklas/capybara#the-dsl to learn more about the Capyb
 ## Advanced usage
 
 See the Capybara documentation. Everything should be configurable.    
+
+Out of the box, this uses raw Rack to serve files out of the `public` directory
+but you could easily modify this to load a Sinatra app or just run it against
+a remote server.
 
 ## Licence
 
